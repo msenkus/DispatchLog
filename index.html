@@ -1,0 +1,386 @@
+<html>
+<head>
+  <title>Dispatch Log</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    .timeB{
+    background-color:#748af7;
+    border: none;
+    color: white;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    float:left;
+    }
+    .Head{
+    float:left;    
+    }
+    #shiftHead{
+        margin-left: 150px;
+    }
+    #disHead{
+        margin-left: 30px;
+    }
+    .caller{
+        max-width: 50px;
+        margin-right:0;
+    }
+    .location{
+        max-width: 50px;
+        margin-right:0;
+    }
+    .callDisc{
+        width:100px;
+        margin-right:0px;
+        word-break: break-all;
+    }
+    .unit{
+        max-width: 30px;
+        word-break: break-all;
+    }
+</style>
+    
+</head>
+<body>
+  
+  <div>
+    <p>
+     <h2 contenteditable="true" class="head" id="dateHead" onclick="document.getElementById('dateHead').innerHTML = 'Date:' + getDate()">Date:</h2>
+     <h2 contenteditable="true" class="Head" id="disHead">Dispatcher:</h2> 
+     <h2 contenteditable="true" class="Head" id="shiftHead">Shift:</h2>
+         <h2><select>
+             <option></option>
+             <option>7-3</option>
+             <option>3-11</option>
+             <option>11-7</option>
+         </select></h2>
+    </p>
+  </div>
+  
+<div class="container" >
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width="85px">Dispatch</th>
+        <th width="85px">10-23</th>
+        <th width="85px">10-24</th>
+        <th class="caller">Caller</th>
+        <th class="location">Location</th>
+        <th>Call Discription</th>
+        <th width="75px">ALS/BLS</th>
+        <th width="80px" >Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('a22').innerHTML = getTime()">T</button><h4 id="a22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('a23').innerHTML = getTime()">T</button><h4 id="a23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('a24').innerHTML = getTime()">T</button><h4 id="a24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+     
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('b22').innerHTML = getTime()">T</button><h4 id="b22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('b23').innerHTML = getTime()">T</button><h4 id="b23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('b24').innerHTML = getTime()">T</button><h4 id="b24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+        
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('c22').innerHTML = getTime()">T</button><h4 id="c22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('c23').innerHTML = getTime()">T</button><h4 id="c23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('c24').innerHTML = getTime()">T</button><h4 id="c24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+    
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('d22').innerHTML = getTime()">T</button><h4 id="d22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('d23').innerHTML = getTime()">T</button><h4 id="d23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('d24').innerHTML = getTime()">T</button><h4 id="d24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+       
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('i22').innerHTML = getTime()">T</button><h4 id="i22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('i23').innerHTML = getTime()">T</button><h4 id="i23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('i24').innerHTML = getTime()">T</button><h4 id="i24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+    
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('j22').innerHTML = getTime()">T</button><h4 id="j22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('j23').innerHTML = getTime()">T</button><h4 id="j23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('j24').innerHTML = getTime()">T</button><h4 id="j24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+       
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('e22').innerHTML = getTime()">T</button><h4 id="e22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('e23').innerHTML = getTime()">T</button><h4 id="e23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('e24').innerHTML = getTime()">T</button><h4 id="e24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+  
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('f22').innerHTML = getTime()">T</button><h4 id="f22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('f23').innerHTML = getTime()">T</button><h4 id="f23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('f24').innerHTML = getTime()">T</button><h4 id="f24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+        
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('g22').innerHTML = getTime()">T</button><h4 id="g22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('g23').innerHTML = getTime()">T</button><h4 id="g23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('g24').innerHTML = getTime()">T</button><h4 id="g24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+    
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('h22').innerHTML = getTime()">T</button><h4 id="h22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('h23').innerHTML = getTime()">T</button><h4 id="h23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('h24').innerHTML = getTime()">T</button><h4 id="h24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('k22').innerHTML = getTime()">T</button><h4 id="k22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('k23').innerHTML = getTime()">T</button><h4 id="k23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('k24').innerHTML = getTime()">T</button><h4 id="k24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+       
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('l22').innerHTML = getTime()">T</button><h4 id="l22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('l23').innerHTML = getTime()">T</button><h4 id="l23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('l24').innerHTML = getTime()">T</button><h4 id="l24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+   
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('m22').innerHTML = getTime()">T</button><h4 id="m22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('m23').innerHTML = getTime()">T</button><h4 id="m23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('m24').innerHTML = getTime()">T</button><h4 id="m24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+             
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('n22').innerHTML = getTime()">T</button><h4 id="n22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('n23').innerHTML = getTime()">T</button><h4 id="n23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('n24').innerHTML = getTime()">T</button><h4 id="n24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+     
+      <tr>
+        <td><button class="timeB" type="button" onclick="document.getElementById('o22').innerHTML = getTime()">T</button><h4 id="o22" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('o23').innerHTML = getTime()">T</button><h4 id="o23" contenteditable="true"><center></center></h4></td>
+        <td><button class="timeB" type="button" onclick="document.getElementById('o24').innerHTML = getTime()">T</button><h4 id="o24" contenteditable="true"><center></center></h4></td>
+        <td contenteditable="true" class="caller"></td>
+        <td contenteditable="true" class="location"></td>
+        <td contenteditable="true" class="callDisc"></td>
+        <td>
+            <select>
+                <option value=""></option>
+                <option value="ALS">ALS</option>
+                <option value="BLS">BLS</option>
+            </select>
+        </td>
+        <td contenteditable="true" class="unit"></td>
+      </tr>
+
+        
+        
+    </tbody>
+  </table>
+
+</div>  
+</body>
+    <script>
+    function getDate(){
+        var d = new Date();
+        var date = (d.getUTCMonth() +1) + "/" + d.getDate() + "/" + d.getFullYear();
+        return date;
+    }
+    function getTime(){
+    var t = new Date();
+    var currentTime = t.getHours() + ":" + t.getMinutes();
+    return currentTime;
+    }
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
